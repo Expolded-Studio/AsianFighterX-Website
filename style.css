@@ -1,16 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #806140;
     color: #000000;
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+.container {
+    color: rgb(0, 234, 255);
 }
 button1 {
-    background-color: darkgoldenrod;
+    background-color: orange;
+    color: rgb(255, 255, 255):
 }
 button2 {
-    background-color: lightcyan;
+    background-color: rgb(120, 248, 120);
+    color: rgb(255, 255, 255)
 }
 button1:hover {
     background-color: yellow;
+}
+button2:hover {
+    background-color: darkred;
 }
