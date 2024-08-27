@@ -2,7 +2,7 @@ function sleep(ms){
     return new Promise(resolve => setTimeout(resolve,ms));
 }
 function tp(url){
-    console.log("Redirecting to", url);
+    call("Redirecting to",redirect,url);
     sleep(20)
     window.location.href = url;
 }
@@ -33,6 +33,10 @@ function call(log,type,conditional,){
     }
     if (type === "assert"){
         console.assert(conditional,log);
+    }
+    if (type === "redirect"){
+        console.log(log,conditional)
+        sleep(100)
     }
     else{
         console.log("Invalid Type")
