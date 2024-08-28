@@ -1,3 +1,7 @@
+html {
+    background-size: cover;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #806140;
@@ -5,7 +9,6 @@ body {
     margin: 0;
     padding: 0;
     background-size: cover;   
-}
 }
 .container1 {
     background-color: rgb(0, 234, 255);
