@@ -1,41 +1,41 @@
-function sleep(number) {
-    setTimeout(()=>{},number)
-}
+
 
 function tp(url){
     console.log("Redirecting to", url);
-    sleep(100)
+    setTimeout(()=>{},1000)
     window.location.href = url;
 }
 function call(log,type,conditional,){
     if (type === "log"){
-        console.log(log);
+        console.log(log)
     }
     if (type === "error"){
-        console.error(log);
+        console.error(log)
     }
     if (type === "info"){
         console.info(log)
     }
     if (type === "warn"){
-        console.warn(log);
+        console.warn(log)
     }
     if (type === "debug"){
-        console.debug(log);
+        console.debug(log)
     }
     if (type === "starttimer"){
-        console.time(log);
+        console.time(log)
     }
     if (type === "endtimer"){
-        console.time(log);
+        console.timeEnd(log)
+        console.timeLog(log)
     }
     if (type === "trace"){
-        console.trace(log);
+        console.trace(log)
     }
     if (type === "assert"){
-        console.assert(conditional,log);
+        console.assert(conditional,log)
     }
     else{
-        console.log("Invalid Type")
+        alert('The function',type,log,"was voided. Error: Invalid Input") 
+        console.error("Error Function",type,log,"{Invalid Type}")
     }
 }
