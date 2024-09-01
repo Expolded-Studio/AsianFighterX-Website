@@ -1,5 +1,7 @@
 html {
     background-size: cover;
+    background-image: url("index.png");
+    background-position: center;
 }
 head {
     background-size: cover;
@@ -11,6 +13,15 @@ body {
     margin: 0;
     padding: 0;
     background-size: inherit;   
+}
+.container2 {
+    background-image: url(backgr.png);
+    background-size: contain;
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    margin-top: 7%;
+    left: 0;
 }
 .container1 {
     background-color: rgb(109, 126, 110);

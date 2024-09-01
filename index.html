@@ -6,12 +6,11 @@
         <title>AsianFighterX Official Website</title>
         <link rel="stylesheet" href="style.css">
         <body>
-            <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js", onloadstart="call('firebase-app has started loading',log), call('firebase-app',starttimer)", onload="call('firebase-app has finished loading',log), call('firebase-app', endtimer)"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js", onloadstart="call('firebase-auth has started loading',log), call('firebase-auth',starttimer)", onload="call('firebase-auth has finished loading',log), call('firebase-auth', endtimer)"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js", onloadstart="call('firebase-database has started loading',log), call('firebase-database',starttimer)" onload="call('firebase-database has finished loading',log), call('firebase-database',endtimer)"></script>
             <!-- Make sure to load these files before loading references-->
-
-
+            
             <div class="container1">
             <button1 class="button1" onclick="tp('signup.html')">Sign In!</button1>
             </div>
