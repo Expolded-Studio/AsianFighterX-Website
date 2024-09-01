@@ -14,9 +14,14 @@ body {
 }
 .container1 {
     background-color: rgb(109, 126, 110);
-    background-size: 100%,30%;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 0;
 }
 .button1 {
     background-color: orange;
     color: rgb(255, 255, 255);
+    width: 100px;
+    height: 30px;
 }
