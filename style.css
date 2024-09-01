@@ -15,13 +15,15 @@ body {
 .container1 {
     background-color: rgb(109, 126, 110);
     width: 100%;
-    height: 30%;
+    height: 7%;
     position: absolute;
     top: 0;
 }
 .button1 {
-    background-color: orange;
-    color: rgb(255, 255, 255);
-    width: 100px;
-    height: 30px;
+    background-color: blue;
+    color: white;
+    font-size: 100%;
+    display: flex;
+    width: 10%;
+    height: 100%;
 }
