@@ -5,40 +5,42 @@ function tp(url){
     setTimeout(()=>{},1000)
     window.location.href = url;
 }
-function call(log,type,conditional,){
-    if (type === "log"){
-        console.log(log)
-    }
-    if (type === "error"){
-        console.error(log)
-    }
-    if (type === "info"){
-        console.info(log)
-    }
-    if (type === "warn"){
-        console.warn(log)
-    }
-    if (type === "debug"){
-        console.debug(log)
-    }
-    if (type === "starttimer"){
-        console.time(log)
-    }
-    if (type === "endtimer"){
-        console.timeEnd(log)
-        console.timeLog(log)
-    }
-    if (type === "trace"){
-        console.trace(log)
-    }
-    if (type === "assert"){
-        console.assert(conditional,log)
-    }
-    else{
-        alert('The function',type,log,"was voided. Error: Invalid Input") 
-        console.error("Error Function",type,log,"{Invalid Type}")
+function call(log, type, conditional) {
+    switch (type) {
+        case "log":
+            console.log(log);
+            break;
+        case "error":
+            console.error(log);
+            break;
+        case "info":
+            console.info(log);
+            break;
+        case "warn":
+            console.warn(log);
+            break;
+        case "debug":
+            console.debug(log);
+            break;
+        case "starttimer":
+            console.time(log);
+            break;
+        case "endtimer":
+            console.timeEnd(log);
+            console.timeLog(log);
+            break;
+        case "trace":
+            console.trace(log);
+            break;
+        case "assert":
+            console.assert(conditional, log);
+            break;
+        default:
+            console.error("Error Function: Invalid Type: ", type,"Input:",log);
+            break;
     }
 }
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
@@ -60,5 +62,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = firebase.initializeApp(firebaseConfig);
+const analytics = firebase.analytics(app);
