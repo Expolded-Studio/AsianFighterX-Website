@@ -1,1 +1,16 @@
-
+name: sectpull
+run-name: Pull Request to ${{ inputs.deploy_target }} by @${{ github.actor }}
+on:
+    pull_request:
+        branches-ignore:
+            - main
+        paths-ignore:
+            - 'archive/**'
+            - 'legal/**'
+            - '.github/**'
+jobs:
+    invcheck:
+        runs-on: (${{ matrix.os }})
+        strategy:
+            matrix:
+                os: [ubuntu-latest, mac-latest, windows-latest]

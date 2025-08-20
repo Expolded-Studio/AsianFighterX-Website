@@ -7,20 +7,20 @@
         <link rel="stylesheet" href="style.css">
         <body>
             <!-- Include the utility script first to ensure the `call` function is available -->
-    <script src="call.js"></script>
+    <script type="module" src="call.js"></script>
 
     <!-- Load Firebase libraries with onload handlers -->
     <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js" 
-            onloadstart="call('firebase-app has started loading', 'log'), call('firebase-app', 'starttimer')"
-            onload="call('firebase-app has finished loading', 'log'), call('firebase-app', 'endtimer')">
+            onloadstart="call('firebase-app has started loading', 'log')"
+            onload="call('firebase-app has finished loading', 'log')">
     </script>
     <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js" 
-            onloadstart="call('firebase-auth has started loading', 'log'), call('firebase-auth', 'starttimer')"
-            onload="call('firebase-auth has finished loading', 'log'), call('firebase-auth', 'endtimer')">
+            onloadstart="call('firebase-auth has started loading', 'log')"
+            onload="call('firebase-auth has finished loading', 'log')">
     </script>
     <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js" 
-            onloadstart="call('firebase-database has started loading', 'log'), call('firebase-database', 'starttimer')"
-            onload="call('firebase-database has finished loading', 'log'), call('firebase-database', 'endtimer')">
+            onloadstart="call('firebase-database has started loading', 'log')"
+            onload="call('firebase-database has finished loading', 'log')">
     </script>
             <!-- Make sure to load these files before loading references-->
             
@@ -29,7 +29,7 @@
             </div>
             
 
-            <script src="script.js"></script>
+            <script type="module" src="script.js"></script>
         </body>
     </head>
 </html>

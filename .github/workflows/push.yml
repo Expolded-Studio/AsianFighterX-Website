@@ -1,0 +1,10 @@
+name: sectpush
+run-name: Push to ${{ inputs.deploy_target }} from local; user @${{ github.actor }}
+on:
+    push:
+        branches-ignore:
+            - main
+    page_build:
+job-steps:
+
+    

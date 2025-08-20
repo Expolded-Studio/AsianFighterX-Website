@@ -1,0 +1,51 @@
+name: systemcheck
+run-name: Automatic System Check
+on:
+    pull_request:
+    push:
+    schedule:
+        - cron: '0 0,2,4,6,8,10,12,14,16,18,20,22 * * *'
+        
+jobs:
+  start:
+    name: Analyze (${{ matrix.language }}) on (${{ matrix.os }}).
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    permissions:
+        security-events: write
+        packages: read
+        actions: read
+        contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+            include:
+              - language: javascript-typescript
+                build-mode: none
+            os: [ubuntu-latest, mac-latest, windows-latest]
+    steps:
+    - name: Initialize CodeQL check
+      uses: github/codeql-action/init@v3
+      
+
+  build:
+    name: (${{ matrix.language }}) update on times security; (${{ matrix.sect }}) and update; (${{ matrix.update }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+        fail-fast: false
+        matrix:
+            include:
+              - language: javascript-typescript
+                build-mode: none
+            os: [ubuntu-latest, mac-latest, windows-latest]
+            sect: ['0 0,4,8,12,16,20 * * *']
+            update: ['0 2,6,10,14,18,24 * * *']
+    steps:
+      - name: Run system security check
+        if: github.event_name == 'schedule' && github.event.schedule == matrix.sect
+        uses: actions/checkout@v4
+
+
+        
+      - name: Run system update
+        if: github.event_name == 'schedule' && github.event.schedule == matrix.update
+        run: echo "This is an Auto-Update"
